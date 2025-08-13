@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registration Confirmation</title>
+  <link rel="stylesheet" href="cssstyle.css">
+</head>
+<body>
+
+<header class="header">
+  <h1>✅ Registration Confirmed</h1>
+  <p>We’re excited to have you join us!</p>
+</header>
+
+<main>
+  <div class="confirmation">
+    <h2>Your Registration Details</h2>
+    <p><strong>Name:</strong> <span id="c-name"></span></p>
+    <p><strong>Email:</strong> <span id="c-email"></span></p>
+    <p><strong>Phone:</strong> <span id="c-phone"></span></p>
+    <p><strong>Event:</strong> <span id="c-event"></span></p>
+    <p><strong>Additional Details:</strong> <span id="c-message"></span></p>
+  </div>
+</main>
+
+<footer>
+  <p>&copy; 2025 Event Corp | See you soon!</p>
+</footer>
+
+<script>
+  const params = new URLSearchParams(window.location.search);
+  document.getElementById('c-name').textContent = params.get('name') || '';
+  document.getElementById('c-email').textContent = params.get('email') || '';
+  document.getElementById('c-phone').textContent = params.get('phone') || '';
+  document.getElementById('c-event').textContent = params.get('event') || '';
+  document.getElementById('c-message').textContent = params.get('message') || 'None';
+</script>
+
+</body>
+</html>
